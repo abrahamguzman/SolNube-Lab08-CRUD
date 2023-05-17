@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab08-CRUD</title>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+  <section class="section-left">
+    <div class="form-box">
+        <div class="form-value">
+            <form action="" id="form">
+                <h2>LAB 08</h2>
+                <div class="inputbox">
+                    <ion-icon name="videocam-outline"></ion-icon>
+                    <input type="text" required id="title">
+                    <label for="">Nombre</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="clipboard-outline"></ion-icon>
+                    <input type="text" required id="content">
+                    <label for="">Descripción</label>
+                </div>
+                <div class="inputbox">
+                  <ion-icon name="calendar-outline"></ion-icon>
+                  <input type="text" required id="year">
+                  <label for="">Año</label>
+              </div>
+              <div class="inputbox">
+                <ion-icon name="hourglass-outline"></ion-icon>
+                <input type="text" required id="duration">
+                <label for="">Duración</label>
+              </div>
+                <button class="plus">Agregar</button>
+            </form>
+        </div>
+    </div>
+  </section>
+  <section class="section-right">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Año</th>
+          <th>Duración (min)</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="list">
+
+      </tbody>
+    </table>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="crud.js"></script>
+</body>
+</html>
