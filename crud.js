@@ -20,6 +20,7 @@ const form = document.getElementById('form');
 const title = document.getElementById('title');
 const content = document.getElementById('content');
 const list = document.getElementById('list');
+const director = document.getElementById('director');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -28,7 +29,8 @@ form.addEventListener('submit', (e) => {
     title: title.value,
     content: content.value,
     year: year.value,
-    duration: duration.value
+    duration: duration.value,
+    director: director.value
   };
 
   database.ref('items').push(newItem);
@@ -36,6 +38,7 @@ form.addEventListener('submit', (e) => {
   content.value = '';
   year.value = '';
   duration.value = '';
+  director.value = '';
   alert("Elemento insertado");
 });
 
@@ -48,6 +51,7 @@ database.ref('items').on('value', (snapshot) => {
       const listItem = document.createElement('tr');
       listItem.innerHTML = `
         <td>${childData.title}</td>
+        <td>${childData.director}</td>
         <td>${childData.content}</td>
         <td>${childData.year}</td>
         <td>${childData.duration}</td>
@@ -67,6 +71,7 @@ database.ref('items').on('value', (snapshot) => {
         e.preventDefault();
         const key = e.target.getAttribute('data-key');
         database.ref('items/' + key).remove();
+        prompt("Película eliminada");
       });
 
       const updateButton = listItem.querySelector('.update');
@@ -74,10 +79,11 @@ database.ref('items').on('value', (snapshot) => {
       e.preventDefault();
       const key = e.target.getAttribute('data-key');
       const newTitle = prompt('Nuevo nombre:');
+      const newDirector = prompt('Nuevo director:');
       const newContent = prompt('Nueva descripción:');
       const newYear = prompt('Nuevo año:');
       const newDuration = prompt('Nuevo duración:');
-      const newData = { title: newTitle, content: newContent, year: newYear, duration: newDuration };
+      const newData = { title: newTitle, director: newDirector,content: newContent, year: newYear, duration: newDuration };
       database.ref('items/' + key).update(newData);
       });
 

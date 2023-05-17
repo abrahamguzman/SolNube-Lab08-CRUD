@@ -17,25 +17,31 @@
             <form action="" id="form">
                 <h2>LAB 08</h2>
                 <div class="inputbox">
-                    <ion-icon name="videocam-outline"></ion-icon>
-                    <input type="text" required id="title">
+                    <ion-icon name="videocam-outline" class="icono"></ion-icon>
+                    <input type="text" required id="title" class="input-text">
                     <label for="">Nombre</label>
                 </div>
                 <div class="inputbox">
-                    <ion-icon name="clipboard-outline"></ion-icon>
-                    <input type="text" required id="content">
+                  <ion-icon name="person-outline" class="icono"></ion-icon>
+                  <input type="text" required id="director" class="input-text">
+                  <label for="">Director</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="clipboard-outline" class="icono"></ion-icon>
+                    <input type="text" required id="content" class="input-text">
                     <label for="">Descripción</label>
                 </div>
                 <div class="inputbox">
-                  <ion-icon name="calendar-outline"></ion-icon>
-                  <input type="text" required id="year">
+                  <ion-icon name="calendar-outline" class="icono"></ion-icon>
+                  <input type="text" required id="year" class="input-text">
                   <label for="">Año</label>
-              </div>
-              <div class="inputbox">
-                <ion-icon name="hourglass-outline"></ion-icon>
-                <input type="text" required id="duration">
-                <label for="">Duración</label>
-              </div>
+                </div>
+                <div class="inputbox">
+                  <ion-icon name="hourglass-outline" class="icono"></ion-icon>
+                  <input type="text" required id="duration" class="input-text">
+                  <label for="">Duración</label>
+                </div>
+                
                 <button class="plus">Agregar</button>
             </form>
         </div>
@@ -46,6 +52,7 @@
       <thead>
         <tr>
           <th>Nombre</th>
+          <th>Director</th>
           <th>Descripción</th>
           <th>Año</th>
           <th>Duración (min)</th>
